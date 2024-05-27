@@ -6,20 +6,24 @@ subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: ammar_bio.jpeg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>Queen Mary University of London</p>
+    <p>EECS Dept, </p>
+    <p>London, UK</p>
 
-news: true # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
+news: false # includes a list of news items
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I came from a Computer Engineering background and i doing my PhD in computer science PhD degree at QMUL  specializing in Computer Vision with a keen interest in using machine learning for 3D Object Detection for Autonomous Vehicles. My research focuses on applying deep learning techniques inlcuding CNNs and (Visual Language Model)VLM to 3D Object Detection task using publicily available dataset such as KiTTI and Waymo. 
+I have also be researching on the effects of adverse weather condition on lidar sensor which producing noise in point cloud data.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+
+I am also interetst in working on other vision task such as depth estimation and object tracking.
+
+Part of his role at university was being a Teaching Assistant for the 
+
