@@ -172,7 +172,7 @@
       ]
     },
     {
-      "name": "Data and Model pipeline parallelism",
+      "name": "3D Distributed parallelism for Deep learning",
       "icon": "fa-solid fa-tag",
       "keywords": [
         "DDP", "Zero", "Megatron-LM", "Mixed Precision"
