@@ -2,24 +2,25 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: <a href='#'>Affiliations</a>. QMUL, EECS.
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: ammar_bio.jpeg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p> Queen Mary University of London</p>
+    <p> EECS Dept </p>
+    <p> London, UK </p>
 
-news: true # includes a list of news items
+
+news: false # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I came from a Computer Engineering background with PhD in computer science PhD degree at QMUL  specializing in Computer Vision with a research focus on the development and optimization of Convolutional and  Transformer models to address intricate challenges in vision-based and LLM tasks, including high 3D detection in Autonomous Vehicles. I have experience in high-performance computing, particularly in optimizing algorithms using CUDA kernels, to achieve efficient and scalable solutions. My experience as a Technical Manager, Software Engineer, and Teaching Fellow has honed my abilities in team leadership, effective communication, and cross-functional collaboration. I am eager to apply these skills in a challenging environment to drive technological advancements and mentor emerging talents in the field of AI/Smart Navigation systems.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I am a continuous learner, always seeking to stay at the forefront of AI/ML advancements. My goal is to leverage cutting-edge technologies to drive business innovation, enhance user experiences, and make a positive impact on the world.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+If you're looking to collaborate on innovative AI/ML projects or are interested in discussing the latest trends in the field, feel free to connect. 
