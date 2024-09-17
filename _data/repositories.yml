@@ -1,14 +1,11 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - ammaryasirnaich
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - ammaryasirnaich/mmdetection3d
+  - ammaryasirnaich/Deeplearning_Playland
+  - ammaryasirnaich/conky_theme_appealing
+  - ammaryasirnaich/ROS_Nvidia_GUI_Docker
+  - ammaryasirnaich/finetunninglama3_1
