@@ -16,8 +16,8 @@
 {% endif %}
 
 <div class="repo p-2 text-center">
-  <a href="https://github.com/{{ repository }}">
-    {% if has_valid_repo %}
+  {% if has_valid_repo %}
+    <a class="repo-card-link" href="https://github.com/{{ repository }}">
       <img
         class="repo-img-light w-100"
         alt="{{ repository }}"
@@ -31,11 +31,11 @@
         src="https://github-readme-stats.vercel.app/api/pin/?username={{ repo_owner }}&repo={{ repo_name }}&theme={{ site.repo_theme_dark }}&show_owner={{ show_owner }}&description_lines_count={{ max_lines }}"
       >
       <p class="mb-0 mt-2"><code>{{ repository }}</code></p>
-    {% else %}
-      <div class="card p-3 text-start">
-        <p class="mb-2"><strong>{{ repository }}</strong></p>
-        <p class="mb-0 text-muted">Invalid repository format. Use <code>owner/repository</code>.</p>
-      </div>
-    {% endif %}
-  </a>
+    </a>
+  {% else %}
+    <div class="card p-3 text-start">
+      <p class="mb-2"><strong>{{ repository }}</strong></p>
+      <p class="mb-0 text-muted">Invalid repository format. Use <code>owner/repository</code>.</p>
+    </div>
+  {% endif %}
 </div>
