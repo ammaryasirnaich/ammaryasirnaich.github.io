@@ -6,7 +6,7 @@
     "email": "a.y.naich@qmul.ac.uk",
     "phone": "",
     "url": "https://ammaryasirnaich.github.io",
-    "summary": "As an aspiring Computer Vision and Machine Learning Engineer, my passion extends across the innovative landscape of AI applications, including but not limited to Autonomous Vehicles.I have accrued over 15 years of experience dedicated to pioneering solutions in Critical Software Applications including Computer Vision and Machine Learning application",
+    "summary": "As an aspiring Computer Vision and Machine Learning Engineer, my passion extends across the innovative landscape of AI applications, including but not limited to Autonomous Vehicles. I have accrued over 15 years of experience dedicated to pioneering solutions in Critical Software Applications including Computer Vision and Machine Learning application",
     "location": {
       "address": "",
       "postalCode": "",
@@ -30,12 +30,12 @@
       "startDate": "2020-11-01",
       "endDate": "2024-09-01",
       "summary": "",
-      "highlights": [["Designed and conducted coursework and labs for Big Data Processing and Machine Learning modules."],
-      ["Supervised MSc students on deep learning and computer vision projects."]]
+      "highlights": [
+        "Designed and conducted coursework and labs for Big Data Processing and Machine Learning modules.",
+        "Supervised MSc students on deep learning and computer vision projects."
+      ]
     }
-
   ],
-
   "education": [
     {
       "institution": "Queen Mary University of London",
@@ -46,40 +46,36 @@
       "startDate": "2019-06-22",
       "endDate": "2024-05-23",
       "score": "10",
-      "courses": ["Integrating LiDAR-Based Intensity Encoders in Neural Network and Transformer Architectures with Multi-GPU Optimisation for 3D Object Detection Enhancement"]
+      "courses": [
+        "Integrating LiDAR-Based Intensity Encoders in Neural Network and Transformer Architectures with Multi-GPU Optimisation for 3D Object Detection Enhancement"
+      ]
     }
   ],
-
   "certificates": [
     {
       "name": "Fundamentals of Accelerated Computing with CUDA Python",
       "date": "2022-01-24",
       "issuer": "NVIDIA",
       "url": "https://learn.nvidia.com/certificates?id=ddd490b6e6004bdebe03b40a2f0fd646"
-      // "icon": "fa-solid fa-tag"
     },
     {
       "name": "Visual Perception for Self- Driving Cars through Coursera",
       "date": "2021-09-01",
       "issuer": "University of Toronto",
       "url": "https://www.coursera.org/account/accomplishments/certificate/XJJV8PAD52FB"
-      // "icon": "fa-solid fa-envelope"
     },
     {
       "name": "Big Data Specialization",
       "date": "2016-11-17",
       "issuer": "University of California San Diego through Coursera",
       "url": "https://www.coursera.org/account/accomplishments/specialization/B4E66BETTWGS"
-      // "icon": "fa-solid fa-hashtag"
     },
     {
       "name": "Introduction to Big Data with Apache Spark",
       "date": "2015-06-10",
       "issuer": "The University of California, Berkeley through edX",
       "url": "https://s3.amazonaws.com/verify.edx.org/downloads/85b85084b20a410f95dcfcb96eb9584d/Certificate.pdf"
-      // "icon": "fa-solid fa-calendar"
     }
- 
   ],
   "publications": [
     {
@@ -87,7 +83,6 @@
       "publisher": "Sensors, MDPI",
       "releaseDate": "2024",
       "url": "https://www.mdpi.com/1424-8220/24/9/2942"
-      // "summary": "It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source."
     }
   ],
   "skills": [
@@ -95,12 +90,7 @@
       "name": "Programming Languages",
       "level": "Master",
       "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "C/C++",
-        "Python",
-        "CUDA Programming with Numba/C++",
-        "SQL"
-      ]
+      "keywords": ["C/C++", "Python", "CUDA Programming with Numba/C++", "SQL"]
     },
     {
       "name": "Libraries/Frameworks",
@@ -116,26 +106,19 @@
         "OpenMMLab",
         "Hugging-Face",
         "Apache Spark"
-        
       ]
     },
     {
-      "name": "Container/Streaming Teachnologies:",
+      "name": "Container/Streaming Technologies:",
       "level": "Master",
       "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Docker",
-        "Apptainer",
-        "MQTT/ Kafka/ Spark Structured Streaming "
-      ]
+      "keywords": ["Docker", "Apptainer", "MQTT/ Kafka/ Spark Structured Streaming "]
     },
     {
       "name": "Tools:",
       "level": "Master",
       "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "GitHub","DockerHub", "Notion", "vscode", "QTcreator", "Wireshark"
-      ]
+      "keywords": ["GitHub", "DockerHub", "Notion", "vscode", "QTcreator", "Wireshark"]
     }
   ],
   "languages": [
@@ -159,24 +142,17 @@
     {
       "name": "Computer Vision",
       "icon": "fa-solid fa-tag",
-      "keywords": [
-        "Vision Transformer (ViT)",
-        "Convolution Transformer"
-      ]
+      "keywords": ["Vision Transformer (ViT)", "Convolution Transformer"]
     },
     {
       "name": "Natural Language Processing ",
       "icon": "fa-solid fa-tag",
-      "keywords": [
-        "Large Language Models (LLM)"
-      ]
+      "keywords": ["Large Language Models (LLM)"]
     },
     {
       "name": "3D Distributed parallelism for Deep learning",
       "icon": "fa-solid fa-tag",
-      "keywords": [
-        "DDP", "Zero", "Megatron-LM", "Mixed Precision"
-      ]
+      "keywords": ["DDP", "Zero", "Megatron-LM", "Mixed Precision"]
     }
   ],
   "references": [
@@ -191,15 +167,4 @@
       "reference": "m.jaber@qmul.ac.uk"
     }
   ]
-
-  // "projects": [
-  //   {
-  //     "name": "Quantum Computing",
-  //     "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
-  //     "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
-  //     "startDate": "2018-01-01",
-  //     "endDate": "2018-01-01",
-  //     "url": "https://example.com"
-  //   }
-  // ]
 }

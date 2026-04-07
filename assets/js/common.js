@@ -31,15 +31,14 @@ $(document).ready(function () {
     });
   }
 
-  // add css to jupyter notebooks
-  const cssLink = document.createElement("link");
-  cssLink.href = "../css/jupyter.css";
-  cssLink.rel = "stylesheet";
-  cssLink.type = "text/css";
-
+  // add css to jupyter notebooks (new <link> per iframe — DOM nodes move on append)
   let jupyterTheme = determineComputedTheme();
 
   $(".jupyter-notebook-iframe-container iframe").each(function () {
+    const cssLink = document.createElement("link");
+    cssLink.href = "../css/jupyter.css";
+    cssLink.rel = "stylesheet";
+    cssLink.type = "text/css";
     $(this).contents().find("head").append(cssLink);
 
     if (jupyterTheme == "dark") {

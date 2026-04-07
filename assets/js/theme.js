@@ -62,10 +62,18 @@ let applyTheme = () => {
     }
   }
 
-  // Set jupyter notebooks themes.
+  // Set jupyter notebooks themes (iframes may be cross-origin or not ready).
   let jupyterNotebooks = document.getElementsByClassName("jupyter-notebook-iframe-container");
   for (let i = 0; i < jupyterNotebooks.length; i++) {
-    let bodyElement = jupyterNotebooks[i].getElementsByTagName("iframe")[0].contentWindow.document.body;
+    let iframe = jupyterNotebooks[i].getElementsByTagName("iframe")[0];
+    if (!iframe || !iframe.contentWindow) continue;
+    let bodyElement;
+    try {
+      bodyElement = iframe.contentWindow.document.body;
+    } catch (e) {
+      continue;
+    }
+    if (!bodyElement) continue;
     if (theme == "dark") {
       bodyElement.setAttribute("data-jp-theme-light", "false");
       bodyElement.setAttribute("data-jp-theme-name", "JupyterLab Dark");
@@ -239,7 +247,7 @@ let initTheme = () => {
   // Add event listener to the theme toggle button.
   document.addEventListener("DOMContentLoaded", function () {
     const mode_toggle = document.getElementById("light-toggle");
-
+    if (!mode_toggle) return;
     mode_toggle.addEventListener("click", function () {
       toggleThemeSetting();
     });
