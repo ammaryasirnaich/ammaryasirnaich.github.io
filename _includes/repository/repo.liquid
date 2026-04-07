@@ -1,5 +1,9 @@
-{% assign repo_url = include.repository | split: '/' %}
-{% if site.data.repositories.github_users contains repo_url.first %}
+{% assign repository = include.repository | strip %}
+{% assign repo_url = repository | split: '/' %}
+{% assign repo_owner = repo_url[0] | strip %}
+{% assign repo_name = repo_url[1] | strip %}
+{% assign has_valid_repo = repo_url.size > 1 and repo_owner != '' and repo_name != '' %}
+{% if site.data.repositories.github_users contains repo_owner %}
   {% assign show_owner = false %}
 {% else %}
   {% assign show_owner = true %}
@@ -12,16 +16,26 @@
 {% endif %}
 
 <div class="repo p-2 text-center">
-  <a href="https://github.com/{{ include.repository }}">
-    <img
-      class="repo-img-light w-100"
-      alt="{{ include.repository }}"
-      src="https://github-readme-stats.vercel.app/api/pin/?username={{ repo_url[0] }}&repo={{ repo_url[1] }}&theme={{ site.repo_theme_light }}&show_owner={{ show_owner }}&description_lines_count={{ max_lines }}"
-    >
-    <img
-      class="repo-img-dark w-100"
-      alt="{{ include.repository }}"
-      src="https://github-readme-stats.vercel.app/api/pin/?username={{ repo_url[0] }}&repo={{ repo_url[1] }}&theme={{ site.repo_theme_dark }}&show_owner={{ show_owner }}&description_lines_count={{ max_lines }}"
-    >
+  <a href="https://github.com/{{ repository }}">
+    {% if has_valid_repo %}
+      <img
+        class="repo-img-light w-100"
+        alt="{{ repository }}"
+        loading="lazy"
+        src="https://github-readme-stats.vercel.app/api/pin/?username={{ repo_owner }}&repo={{ repo_name }}&theme={{ site.repo_theme_light }}&show_owner={{ show_owner }}&description_lines_count={{ max_lines }}"
+      >
+      <img
+        class="repo-img-dark w-100"
+        alt="{{ repository }}"
+        loading="lazy"
+        src="https://github-readme-stats.vercel.app/api/pin/?username={{ repo_owner }}&repo={{ repo_name }}&theme={{ site.repo_theme_dark }}&show_owner={{ show_owner }}&description_lines_count={{ max_lines }}"
+      >
+      <p class="mb-0 mt-2"><code>{{ repository }}</code></p>
+    {% else %}
+      <div class="card p-3 text-start">
+        <p class="mb-2"><strong>{{ repository }}</strong></p>
+        <p class="mb-0 text-muted">Invalid repository format. Use <code>owner/repository</code>.</p>
+      </div>
+    {% endif %}
   </a>
 </div>
