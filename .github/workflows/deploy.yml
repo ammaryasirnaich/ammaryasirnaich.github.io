@@ -1,6 +1,10 @@
 name: Deploy site
 
+# External posts (e.g. Medium) are merged at build time from RSS. Without new commits,
+# the site would stay stale; schedule + workflow_dispatch refresh the feed periodically.
 on:
+  schedule:
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC — rebuild to pull latest Medium RSS
   push:
     branches:
       - master
@@ -15,6 +19,7 @@ on:
       - "**.yml"
       - "Gemfile"
       - "Gemfile.lock"
+      - "_plugins/**"
       - "!.github/workflows/axe.yml"
       - "!.github/workflows/broken-links.yml"
       - "!.github/workflows/deploy-docker-tag.yml"
@@ -42,6 +47,7 @@ on:
       - "**.yml"
       - "Gemfile"
       - "Gemfile.lock"
+      - "_plugins/**"
       - "!.github/workflows/axe.yml"
       - "!.github/workflows/broken-links.yml"
       - "!.github/workflows/deploy-docker-tag.yml"

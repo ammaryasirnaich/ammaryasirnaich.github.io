@@ -4,6 +4,8 @@ github_users:
 repo_description_lines_max: 2
 
 github_repos:
+  - ammaryasirnaich/Github_Repo_Summarizer
+  - ammaryasirnaich/openstack_baremetal_installation
   - ammaryasirnaich/mmdetection3d
   - ammaryasirnaich/Deeplearning_Playland
   - ammaryasirnaich/conky_theme_appealing

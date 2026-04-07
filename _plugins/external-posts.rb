@@ -23,10 +23,29 @@ module ExternalPosts
     end
 
     def fetch_from_rss(site, src)
-      xml = HTTParty.get(src['rss_url']).body
-      return if xml.nil?
+      # Medium and other hosts often require a real browser-like User-Agent; default HTTParty may get blocked.
+      response = HTTParty.get(
+        src['rss_url'],
+        headers: {
+          'User-Agent' => 'Mozilla/5.0 (compatible; Jekyll RSS fetcher; +https://github.com/jekyll/jekyll)',
+          'Accept' => 'application/rss+xml, application/atom+xml, application/xml, text/xml;q=0.9, */*;q=0.8',
+        },
+        timeout: 45,
+        follow_redirects: true,
+      )
+
+      unless response.success?
+        Jekyll.logger.error 'ExternalPosts:', "HTTP #{response.code} when fetching #{src['rss_url']}"
+        return
+      end
+
+      xml = response.body
+      return if xml.nil? || xml.strip.empty?
+
       feed = Feedjira.parse(xml)
       process_entries(site, src, feed.entries)
+    rescue StandardError => e
+      Jekyll.logger.error 'ExternalPosts:', "Failed to parse RSS #{src['rss_url']}: #{e.message}"
     end
 
     def process_entries(site, src, entries)
