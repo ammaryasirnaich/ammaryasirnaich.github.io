@@ -12,3 +12,13 @@ github_repos:
   - ammaryasirnaich/conky_theme_appealing
   - ammaryasirnaich/ROS_Nvidia_GUI_Docker
   - ammaryasirnaich/finetunninglama3_1
+
+repo_summaries:
+  ammaryasirnaich/ammaryasirnaich.github.io: Personal portfolio website built with al-folio and deployed on GitHub Pages.
+  ammaryasirnaich/Github_Repo_Summarizer: Tooling to summarize GitHub repositories and surface key project insights.
+  ammaryasirnaich/openstack_baremetal_installation: Notes and automation for OpenStack bare-metal installation workflows.
+  ammaryasirnaich/mmdetection3d: Experiments and development work around 3D object detection pipelines.
+  ammaryasirnaich/Deeplearning_Playland: Deep learning playground with practical experiments and model prototyping.
+  ammaryasirnaich/conky_theme_appealing: Custom Conky theme setup and desktop monitoring customization.
+  ammaryasirnaich/ROS_Nvidia_GUI_Docker: Dockerized ROS setup with NVIDIA GPU and GUI support.
+  ammaryasirnaich/finetunninglama3_1: Fine-tuning experiments and utilities for Llama 3.1 models.
