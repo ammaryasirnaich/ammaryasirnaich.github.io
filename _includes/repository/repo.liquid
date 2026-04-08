@@ -27,6 +27,16 @@
         {% else %}
           <p class="mb-0 text-muted">Open repository on GitHub.</p>
         {% endif %}
+        <div class="mt-2 d-flex gap-2 flex-wrap">
+          <img
+            alt="GitHub stars for {{ repository }}"
+            src="https://img.shields.io/github/stars/{{ repository }}?style=flat-square&label=stars"
+          >
+          <img
+            alt="GitHub forks for {{ repository }}"
+            src="https://img.shields.io/github/forks/{{ repository }}?style=flat-square&label=forks"
+          >
+        </div>
       </div>
     </a>
   {% else %}
