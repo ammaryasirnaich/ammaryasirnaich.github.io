@@ -1,8 +1,13 @@
 source 'https://rubygems.org'
+
+gem 'jekyll'
+
+# Core plugins that directly affect site building
 group :jekyll_plugins do
-    gem 'classifier-reborn'
-    gem 'jekyll'
+    gem 'jekyll-3rd-party-libraries'
     gem 'jekyll-archives'
+    gem 'jekyll-cache-bust'
+    gem 'classifier-reborn'
     gem 'jekyll-email-protect'
     gem 'jekyll-feed'
     gem 'jekyll-get-json'
@@ -14,16 +19,18 @@ group :jekyll_plugins do
     gem 'jekyll-regex-replace'
     gem 'jekyll-scholar'
     gem 'jekyll-sitemap'
+    gem 'jekyll-socials'
     gem 'jekyll-tabs'
     gem 'jekyll-toc'
     gem 'jekyll-twitter-plugin'
     gem 'jemoji'
-    gem 'mini_racer'
-    gem 'unicode_utils'
-    gem 'webrick'
 end
+
+# Gems for development or external data fetching (outside :jekyll_plugins)
 group :other_plugins do
     gem 'css_parser'
     gem 'feedjira'
     gem 'httparty'
+    gem 'observer'
+    gem 'ostruct'
 end
