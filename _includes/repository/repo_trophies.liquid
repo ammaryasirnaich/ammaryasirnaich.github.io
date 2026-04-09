@@ -2,45 +2,53 @@
 {% if trophy_api == nil or trophy_api == '' %}
   {% assign trophy_api = 'https://gh-trophy.cdnsoft.net' %}
 {% endif %}
-<div class="repo p-2 text-center">
-  <a class="repo-card-link" href="https://github.com/ryo-ma/github-profile-trophy">
-    <span class="d-none d-sm-none d-md-block">
-      <img
-        class="repo-img-light"
-        alt="{{ include.username }}"
-        src="{{ trophy_api }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_light }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=6"
-      >
-      <img
-        class="repo-img-dark"
-        alt="{{ include.username }}"
-        src="{{ trophy_api }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_dark }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=6"
-      >
-    </span>
+<div class="repo repo-trophy-card p-2 text-center">
+  <div class="repo-trophy-card-inner">
+    <a class="repo-card-link" href="https://github.com/ryo-ma/github-profile-trophy" target="_blank" rel="noopener noreferrer">
+      <span class="d-none d-sm-none d-md-block">
+        <img
+          class="repo-img-light"
+          alt="GitHub profile trophies for {{ include.username }}"
+          loading="lazy"
+          src="{{ trophy_api }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_light }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=6"
+        >
+        <img
+          class="repo-img-dark"
+          alt="GitHub profile trophies for {{ include.username }}"
+          loading="lazy"
+          src="{{ trophy_api }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_dark }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=6"
+        >
+      </span>
 
-    <span class="d-none d-sm-block d-md-none">
-      <img
-        class="repo-img-light"
-        alt="{{ include.username }}"
-        src="{{ trophy_api }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_light }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=4"
-      >
-      <img
-        class="repo-img-dark"
-        alt="{{ include.username }}"
-        src="{{ trophy_api }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_dark }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=4"
-      >
-    </span>
+      <span class="d-none d-sm-block d-md-none">
+        <img
+          class="repo-img-light"
+          alt="GitHub profile trophies for {{ include.username }}"
+          loading="lazy"
+          src="{{ trophy_api }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_light }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=4"
+        >
+        <img
+          class="repo-img-dark"
+          alt="GitHub profile trophies for {{ include.username }}"
+          loading="lazy"
+          src="{{ trophy_api }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_dark }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=4"
+        >
+      </span>
 
-    <span class="d-block d-sm-none">
-      <img
-        class="repo-img-light"
-        alt="{{ include.username }}"
-        src="{{ trophy_api }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_light }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=3"
-      >
-      <img
-        class="repo-img-dark"
-        alt="{{ include.username }}"
-        src="{{ trophy_api }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_dark }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=3"
-      >
-    </span>
-  </a>
+      <span class="d-block d-sm-none">
+        <img
+          class="repo-img-light"
+          alt="GitHub profile trophies for {{ include.username }}"
+          loading="lazy"
+          src="{{ trophy_api }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_light }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=3"
+        >
+        <img
+          class="repo-img-dark"
+          alt="GitHub profile trophies for {{ include.username }}"
+          loading="lazy"
+          src="{{ trophy_api }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_dark }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=3"
+        >
+      </span>
+    </a>
+  </div>
 </div>
