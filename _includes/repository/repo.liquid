@@ -9,38 +9,69 @@
   {% assign show_owner = true %}
 {% endif %}
 
-{% if site.data.repositories.repo_description_lines_max %}
-  {% assign max_lines = site.data.repositories.repo_description_lines_max %}
-{% else %}
-  {% assign max_lines = 2 %}
-{% endif %}
+{% assign meta = site.data.repositories.repo_details[repository] %}
+{% capture tag_slugs %}
+{% if meta and meta.tags %}{% for t in meta.tags %}{{ t | slugify }} {% endfor %}{% endif %}
+{% endcapture %}
 
-<div class="repo p-2 text-center">
+<div
+  class="repo repo-showcase-card{% if meta and meta.featured %} repo-showcase-card--featured{% endif %}"
+  data-repo-tags="{{ tag_slugs | strip }}"
+>
   {% if has_valid_repo %}
-    <a class="repo-card-link" href="https://github.com/{{ repository }}">
-      <div class="card p-3 text-start">
-        <p class="mb-2">
-          <strong>{% if show_owner %}{{ repository }}{% else %}{{ repo_name }}{% endif %}</strong>
-        </p>
-        {% if site.data.repositories.repo_summaries and site.data.repositories.repo_summaries[repository] %}
-          <p class="mb-0 text-muted">{{ site.data.repositories.repo_summaries[repository] | strip }}</p>
-        {% else %}
-          <p class="mb-0 text-muted">Open repository on GitHub.</p>
+    <div class="repo-card-inner card p-3 text-start h-100">
+      <div class="d-flex flex-wrap align-items-start justify-content-between gap-2 mb-2">
+        <h3 class="h5 mb-0 repo-showcase-title">
+          <a href="https://github.com/{{ repository }}" target="_blank" rel="noopener noreferrer">
+            {% if show_owner %}{{ repository }}{% else %}{{ repo_name }}{% endif %}
+          </a>
+        </h3>
+        {% if meta and meta.status %}
+          <span class="badge repo-status-badge rounded-pill">{{ meta.status }}</span>
         {% endif %}
-        <div class="mt-2 d-flex gap-2 flex-wrap">
-          <img
-            alt="GitHub stars for {{ repository }}"
-            src="https://img.shields.io/github/stars/{{ repository }}?style=flat-square&label=stars"
-          >
-          <img
-            alt="GitHub forks for {{ repository }}"
-            src="https://img.shields.io/github/forks/{{ repository }}?style=flat-square&label=forks"
-          >
-        </div>
       </div>
-    </a>
+
+      {% if site.data.repositories.repo_summaries and site.data.repositories.repo_summaries[repository] %}
+        <p class="mb-2 text-muted small repo-showcase-summary">{{ site.data.repositories.repo_summaries[repository] | strip }}</p>
+      {% else %}
+        <p class="mb-2 text-muted small">Open repository on GitHub.</p>
+      {% endif %}
+
+      {% if meta and meta.tags %}
+        <div class="repo-tag-list mb-2">
+          {% for t in meta.tags %}
+            <span class="repo-tag-chip">{{ t }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <div class="repo-badges mb-3 d-flex gap-2 flex-wrap align-items-center">
+        <img
+          alt="GitHub stars for {{ repository }}"
+          loading="lazy"
+          src="https://img.shields.io/github/stars/{{ repository }}?style=flat-square&label=stars"
+        >
+        <img
+          alt="GitHub forks for {{ repository }}"
+          loading="lazy"
+          src="https://img.shields.io/github/forks/{{ repository }}?style=flat-square&label=forks"
+        >
+      </div>
+
+      <div class="repo-actions d-flex flex-wrap gap-2">
+        <a class="btn btn-sm btn-outline-primary" href="https://github.com/{{ repository }}" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-github" aria-hidden="true"></i> Code
+        </a>
+        {% if meta and meta.demo_url and meta.demo_url != '' %}
+          <a class="btn btn-sm btn-outline-secondary" href="{{ meta.demo_url }}" target="_blank" rel="noopener noreferrer">Demo</a>
+        {% endif %}
+        {% if meta and meta.docs_url and meta.docs_url != '' %}
+          <a class="btn btn-sm btn-outline-secondary" href="{{ meta.docs_url }}" target="_blank" rel="noopener noreferrer">Docs</a>
+        {% endif %}
+      </div>
+    </div>
   {% else %}
-    <div class="card p-3 text-start">
+    <div class="repo-card-inner card p-3 text-start">
       <p class="mb-2"><strong>{{ repository }}</strong></p>
       <p class="mb-0 text-muted">Invalid repository format. Use <code>owner/repository</code>.</p>
     </div>

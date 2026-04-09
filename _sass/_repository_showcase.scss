@@ -1,0 +1,139 @@
+// Repository showcase (curated cards, filters, featured state)
+// Uses theme variables from _themes.scss / _variables.scss
+
+.repository-page-intro code {
+  font-size: 0.9em;
+}
+
+.repository-filter-bar {
+  .repo-filter-chip {
+    border-radius: 999px;
+    border: 1px solid var(--global-divider-color);
+    background: var(--global-bg-color);
+    color: var(--global-text-color);
+    transition:
+      background-color 0.15s ease,
+      border-color 0.15s ease,
+      color 0.15s ease;
+
+    &:hover {
+      border-color: var(--global-theme-color);
+      color: var(--global-theme-color);
+    }
+
+    &.active {
+      background-color: var(--global-theme-color);
+      border-color: var(--global-theme-color);
+      color: var(--global-bg-color);
+    }
+  }
+}
+
+.repository-showcase-grid {
+  margin-top: 0.5rem;
+}
+
+.repo-showcase-card {
+  min-width: 0;
+
+  .repo-card-inner {
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.75rem;
+    background-color: var(--global-card-bg-color);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  &:hover .repo-card-inner {
+    transform: translateY(-2px);
+    border-color: var(--global-theme-color);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  &--featured .repo-card-inner {
+    border-color: var(--global-theme-color);
+    box-shadow: 0 0 0 1px var(--global-theme-color);
+  }
+}
+
+html[data-theme="dark"] .repo-showcase-card:hover .repo-card-inner {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+
+.repo-showcase-title a {
+  color: var(--global-text-color);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--global-theme-color);
+  }
+}
+
+.repo-status-badge {
+  background-color: var(--global-card-bg-color);
+  color: var(--global-text-color);
+  border: 1px solid var(--global-theme-color);
+  font-weight: 500;
+  font-size: 0.7rem;
+}
+
+.repo-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.repo-tag-chip {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--global-divider-color);
+  color: var(--global-text-color-light);
+  background: var(--global-bg-color);
+}
+
+.repo-badges img {
+  height: 20px;
+  width: auto;
+}
+
+.repo-actions .btn {
+  font-size: 0.8rem;
+}
+
+.repo-user-card .repo-card-inner {
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.75rem;
+  background-color: var(--global-card-bg-color);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.repo-user-card:hover .repo-card-inner {
+  transform: translateY(-2px);
+  border-color: var(--global-theme-color);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.repo-user-card h3 a {
+  color: var(--global-text-color);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--global-theme-color);
+  }
+}
+
+.repo-trophy-block {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.repositories--trophies .repo .repo-card-link {
+  border-radius: 0.75rem;
+}

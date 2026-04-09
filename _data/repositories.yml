@@ -3,7 +3,9 @@ github_users:
 
 repo_description_lines_max: 2
 
+# Curated list (order preserved). Optional metadata in repo_details below.
 github_repos:
+  - ammaryasirnaich/ammaryasirnaich.github.io
   - ammaryasirnaich/Github_Repo_Summarizer
   - ammaryasirnaich/finetunninglama3_1
   - ammaryasirnaich/openstack_baremetal_installation
@@ -12,8 +14,68 @@ github_repos:
   - ammaryasirnaich/Deeplearning_Playland
   - ammaryasirnaich/conky_theme_appealing
   - ammaryasirnaich/ROS_Nvidia_GUI_Docker
-  
-  
+
+# Tag filter chips (unique tags used across repo_details; order controls button order)
+repo_filter_tags:
+  - Portfolio
+  - Python
+  - ML
+  - LLM
+  - CV
+  - DevOps
+  - Robotics
+  - Linux
+
+# Optional per-repo metadata (key = full owner/name string)
+repo_details:
+  ammaryasirnaich/ammaryasirnaich.github.io:
+    featured: true
+    tags: [Portfolio, Python]
+    demo_url: ""
+    docs_url: ""
+    status: active
+  ammaryasirnaich/Github_Repo_Summarizer:
+    featured: true
+    tags: [Python, ML, DevOps]
+    demo_url: ""
+    docs_url: ""
+    status: active
+  ammaryasirnaich/finetunninglama3_1:
+    featured: true
+    tags: [Python, LLM, ML]
+    demo_url: ""
+    docs_url: ""
+    status: active
+  ammaryasirnaich/openstack_baremetal_installation:
+    tags: [Python, DevOps]
+    demo_url: ""
+    docs_url: ""
+    status: active
+  ammaryasirnaich/PyReqify:
+    tags: [Python, DevOps]
+    demo_url: ""
+    docs_url: ""
+    status: active
+  ammaryasirnaich/mmdetection3d:
+    tags: [Python, CV, ML]
+    demo_url: ""
+    docs_url: ""
+    status: active
+  ammaryasirnaich/Deeplearning_Playland:
+    tags: [Python, ML]
+    demo_url: ""
+    docs_url: ""
+    status: active
+  ammaryasirnaich/conky_theme_appealing:
+    tags: [Linux]
+    demo_url: ""
+    docs_url: ""
+    status: active
+  ammaryasirnaich/ROS_Nvidia_GUI_Docker:
+    tags: [Robotics, DevOps]
+    demo_url: ""
+    docs_url: ""
+    status: active
 
 repo_summaries:
   ammaryasirnaich/ammaryasirnaich.github.io: Personal portfolio website built with al-folio and deployed on GitHub Pages.
@@ -24,3 +86,4 @@ repo_summaries:
   ammaryasirnaich/conky_theme_appealing: Custom Conky theme setup and desktop monitoring customization.
   ammaryasirnaich/ROS_Nvidia_GUI_Docker: Dockerized ROS setup with NVIDIA GPU and GUI support.
   ammaryasirnaich/finetunninglama3_1: Fine-tuning experiments and utilities for Llama 3.1 models.
+  ammaryasirnaich/PyReqify: Python tooling for requirements and dependency workflows.

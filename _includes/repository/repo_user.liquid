@@ -1,8 +1,9 @@
-<div class="repo p-2 text-center">
-  <a class="repo-card-link" href="https://github.com/{{ include.username }}">
-    <div class="card p-3 text-start">
-      <p class="mb-2"><strong>{{ include.username }}</strong></p>
-      <p class="mb-0 text-muted">GitHub profile</p>
-    </div>
-  </a>
+<div class="repo repo-user-card">
+  <div class="repo-card-inner card p-3 text-start h-100">
+    <h3 class="h5 mb-2">
+      <i class="fa-brands fa-github" aria-hidden="true"></i>
+      <a href="https://github.com/{{ include.username }}" target="_blank" rel="noopener noreferrer">{{ include.username }}</a>
+    </h3>
+    <p class="mb-0 text-muted small">GitHub profile</p>
+  </div>
 </div>
