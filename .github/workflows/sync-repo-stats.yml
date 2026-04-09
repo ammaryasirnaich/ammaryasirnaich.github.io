@@ -1,0 +1,42 @@
+name: Sync repository stats
+
+# Weekly refresh of stars/forks/language/pushed_at into _data/repositories_stats.yml
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install PyYAML
+        run: pip install pyyaml
+
+      - name: Sync stats from GitHub API
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python .github/scripts/sync_repo_stats.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _data/repositories_stats.yml
+          if git diff --staged --quiet; then
+            echo "No changes to repositories_stats.yml"
+          else
+            git commit -m "chore: sync repository stats from GitHub API"
+            git push
+          fi

@@ -45,6 +45,23 @@
         </div>
       {% endif %}
 
+      {% assign stats = site.data.repositories_stats.repos[repository] %}
+      {% if stats and stats.error == nil %}
+        {% if stats.language or stats.pushed_at or stats.stars %}
+          <div class="repo-sync-meta mb-2 small text-muted">
+            {% if stats.language %}
+              <span class="repo-tag-chip repo-lang-chip" title="Primary language (from GitHub API)">{{ stats.language }}</span>
+            {% endif %}
+            {% if stats.pushed_at %}
+              <span class="{% if stats.language %}ms-1{% endif %}">Last push {{ stats.pushed_at | date: '%Y-%m-%d' }}</span>
+            {% endif %}
+            {% if stats.stars != nil and stats.forks != nil %}
+              <span class="ms-1 d-none d-md-inline text-nowrap">· {{ stats.stars }} stars · {{ stats.forks }} forks</span>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endif %}
+
       <div class="repo-badges mb-3 d-flex gap-2 flex-wrap align-items-center">
         <img
           alt="GitHub stars for {{ repository }}"
