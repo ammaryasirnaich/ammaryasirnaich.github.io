@@ -5,7 +5,6 @@ repo_description_lines_max: 2
 
 # Curated list (order preserved). Optional metadata in repo_details below.
 github_repos:
-  - ammaryasirnaich/ammaryasirnaich.github.io
   - ammaryasirnaich/Github_Repo_Summarizer
   - ammaryasirnaich/finetunninglama3_1
   - ammaryasirnaich/openstack_baremetal_installation
