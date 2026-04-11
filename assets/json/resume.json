@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Ammar Yasir Naich",
-    "label": "PhD Research / Teaching Fellow",
+    "label": "AI Education Specialist",
     "image": "",
     "email": "a.y.naich@qmul.ac.uk",
-    "phone": "",
+    "phone": "+44-7436792873",
     "url": "https://ammaryasirnaich.github.io",
-    "summary": "As an aspiring Computer Vision and Machine Learning Engineer, my passion extends across the innovative landscape of AI applications, including but not limited to Autonomous Vehicles. I have accrued over 15 years of experience dedicated to pioneering solutions in Critical Software Applications including Computer Vision and Machine Learning application",
+    "summary": "AI Education Specialist with a PhD in Artificial Intelligence and extensive experience in developing efficient machine learning systems, reproducible research software, and scalable data pipelines for data-intensive and real-world applications. Expertise spans Python, distributed computing, GPU/CUDA optimisation, transformer-based models, model quantization, and edge-oriented AI, underpinned by a strong record of rigorous experimentation and technical delivery. Combines academic research, teaching, and postgraduate supervision with industry engineering experience to contribute high-impact, technically grounded AI research.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -16,7 +16,12 @@
     },
     "profiles": [
       {
-        "network": "Twitter",
+        "network": "LinkedIn",
+        "username": "ammaryasirnaich",
+        "url": "https://www.linkedin.com/in/ammaryasirnaich/"
+      },
+      {
+        "network": "X",
         "username": "AmmarYasirN",
         "url": "https://twitter.com/AmmarYasirN"
       }
@@ -24,15 +29,74 @@
   },
   "work": [
     {
-      "name": "Queen Mary University of London",
-      "position": "Teaching Fellow",
-      "url": "https://www.qmul.ac.uk/eecs/people/profiles/naichammaryasir.html",
-      "startDate": "2020-11-01",
-      "endDate": "2024-09-01",
+      "name": "Digital Reality Corp (DRC)",
+      "location": "London, UK",
+      "position": "Machine Learning Engineer",
+      "url": "",
+      "startDate": "2025-09-01",
+      "endDate": "2025-10-31",
       "summary": "",
       "highlights": [
-        "Designed and conducted coursework and labs for Big Data Processing and Machine Learning modules.",
-        "Supervised MSc students on deep learning and computer vision projects."
+        "Developed and trained models converting LiDAR point clouds into 2D/3D digital assets.",
+        "Optimised models and automated data pipelines with CI/CD and AWS services for scalable, reliable delivery."
+      ]
+    },
+    {
+      "name": "Queen Mary University of London",
+      "location": "London, UK",
+      "position": "Research Fellow",
+      "url": "https://www.qmul.ac.uk/eecs/people/profiles/naichammaryasir.html",
+      "startDate": "2021-10-01",
+      "summary": "",
+      "highlights": [
+        "Nominated by QMUL to lecture at QUPT (Hainan, China) on the module Introduction to Data Science.",
+        "Leading development of a scalable AI platform for ML model hosting and evaluation on OpenStack, with reproducible workflows and distributed training/deployment across GPUs; built internal tooling and CLI-based interfaces.",
+        "Developed coursework and laboratory exercises for Big Data Processing (Apache Spark Streaming, Apache GraphFrames), managed lab delivery, and assessed student work.",
+        "Supervised 23 MSc students in deep learning and computer vision projects.",
+        "Designed and delivered advanced coursework and labs in Principles of Machine Learning, integrating crowdsourced datasets and improving student competency in ML techniques by 75%."
+      ]
+    },
+    {
+      "name": "Queen Mary University of London",
+      "location": "London, UK",
+      "position": "PhD Research",
+      "url": "https://www.qmul.ac.uk/eecs/",
+      "startDate": "2019-06-01",
+      "endDate": "2024-07-31",
+      "summary": "",
+      "highlights": [
+        "Developed and evaluated deep learning models for real-time 3D object detection using KITTI, nuScenes, and Waymo; built reproducible training and evaluation pipelines.",
+        "Implemented custom CUDA kernels and leveraged model, data, and pipeline parallelism for efficiency across local and cluster GPUs.",
+        "Explored quantization strategies for efficient training and fine-tuning of LLMs under edge and low-memory GPU conditions."
+      ]
+    },
+    {
+      "name": "NodeNS",
+      "location": "London, UK",
+      "position": "Embedded Software Engineer",
+      "url": "",
+      "startDate": "2020-01-01",
+      "endDate": "2021-01-31",
+      "summary": "",
+      "highlights": [
+        "Built a sensor integration unit for plug-and-play connections between mmWave radar sensors and edge devices.",
+        "Designed and implemented a security protocol for secure communication across the networked system.",
+        "Defined the development stack and built a GUI tool for sensor data transfer and configuration."
+      ]
+    },
+    {
+      "name": "Stingray Technologies (Pvt) Ltd (formerly Maritime System Limited)",
+      "location": "Pakistan",
+      "position": "Technical Manager / Software Architecture",
+      "url": "",
+      "startDate": "2011-01-01",
+      "endDate": "2018-09-30",
+      "summary": "",
+      "highlights": [
+        "Led software architecture and cross-functional teams delivering scalable, low-latency systems in C/C++/Qt.",
+        "Developed software for real-time acquisition and processing from digital I/O and serial sensors; improved processing speed by 40%.",
+        "Architected emulators and simulators in C/C++ for hardware testing, improving reliability and reducing project cost by 35%.",
+        "Contributed to Critical Event Management Services across 250 possible system events, reducing downtime by 70%."
       ]
     }
   ],
@@ -41,84 +105,165 @@
       "institution": "Queen Mary University of London",
       "location": "London, UK",
       "url": "https://www.qmul.ac.uk/eecs/",
-      "area": "Computer Science",
+      "area": "Computer Science (PhD thesis: LiDAR/transformer architectures and multi-GPU optimisation for 3D object detection)",
       "studyType": "PhD",
-      "startDate": "2019-06-22",
-      "endDate": "2024-05-23",
-      "score": "10",
-      "courses": [
-        "Integrating LiDAR-Based Intensity Encoders in Neural Network and Transformer Architectures with Multi-GPU Optimisation for 3D Object Detection Enhancement"
-      ]
+      "startDate": "2019-06-01",
+      "endDate": "2024-07-31",
+      "courses": []
+    },
+    {
+      "institution": "Mehran University of Engineering and Technology",
+      "location": "Jamshoro, Pakistan",
+      "url": "",
+      "area": "Networking",
+      "studyType": "Master of Engineering",
+      "startDate": "",
+      "endDate": "",
+      "courses": []
+    },
+    {
+      "institution": "Mehran University of Engineering and Technology",
+      "location": "Jamshoro, Pakistan",
+      "url": "",
+      "area": "Computer Systems",
+      "studyType": "Bachelor of Engineering",
+      "startDate": "",
+      "endDate": "",
+      "courses": []
+    }
+  ],
+  "publications": [
+    {
+      "name": "LiDAR-based intensity-aware outdoor 3D object detection",
+      "publisher": "Sensors 24.9 (2024): 2942, MDPI",
+      "releaseDate": "2024",
+      "url": "https://www.mdpi.com/1424-8220/24/9/2942",
+      "summary": ""
+    },
+    {
+      "name": "PointConViT: Efficient 3D Object Detection with Adaptable Transformer Convolution Fusion",
+      "publisher": "Under review",
+      "releaseDate": "",
+      "url": "",
+      "summary": ""
+    }
+  ],
+  "awards": [
+    {
+      "title": "Nebius Fellowship Award — AI Inference Engineer track",
+      "date": "2025-01-01",
+      "awarder": "Nebius",
+      "summary": "",
+      "url": ""
+    },
+    {
+      "title": "National Award for PhD Research",
+      "date": "2019-06-01",
+      "awarder": "Higher Education Commission of Pakistan",
+      "summary": "PhD research scholarship",
+      "url": ""
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "IEEE Open Journal of the Computer Society",
+      "position": "Peer Reviewer",
+      "url": "",
+      "startDate": "2022-01-01",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "organization": "International Conference on Vehicular Electronics and Safety (ICVES)",
+      "position": "Conference Reviewer",
+      "url": "",
+      "startDate": "2022-01-01",
+      "summary": "",
+      "highlights": []
     }
   ],
   "certificates": [
     {
       "name": "Fundamentals of Accelerated Computing with CUDA Python",
       "date": "2022-01-24",
-      "issuer": "NVIDIA",
+      "issuer": "NVIDIA DLI",
       "url": "https://learn.nvidia.com/certificates?id=ddd490b6e6004bdebe03b40a2f0fd646"
     },
     {
-      "name": "Visual Perception for Self- Driving Cars through Coursera",
-      "date": "2021-09-01",
-      "issuer": "University of Toronto",
-      "url": "https://www.coursera.org/account/accomplishments/certificate/XJJV8PAD52FB"
-    },
-    {
-      "name": "Big Data Specialization",
+      "name": "Big Data Specialization (Version 1)",
       "date": "2016-11-17",
-      "issuer": "University of California San Diego through Coursera",
+      "issuer": "University of California San Diego (Coursera)",
       "url": "https://www.coursera.org/account/accomplishments/specialization/B4E66BETTWGS"
     },
     {
-      "name": "Introduction to Big Data with Apache Spark",
-      "date": "2015-06-10",
-      "issuer": "The University of California, Berkeley through edX",
-      "url": "https://s3.amazonaws.com/verify.edx.org/downloads/85b85084b20a410f95dcfcb96eb9584d/Certificate.pdf"
-    }
-  ],
-  "publications": [
-    {
-      "name": "LiDAR-based intensity-aware outdoor 3D object detection",
-      "publisher": "Sensors, MDPI",
-      "releaseDate": "2024",
-      "url": "https://www.mdpi.com/1424-8220/24/9/2942"
+      "name": "Visual Perception for Self-Driving Cars",
+      "date": "2021-09-01",
+      "issuer": "University of Toronto (Coursera)",
+      "url": "https://www.coursera.org/account/accomplishments/certificate/XJJV8PAD52FB"
     }
   ],
   "skills": [
     {
-      "name": "Programming Languages",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
-      "keywords": ["C/C++", "Python", "CUDA Programming with Numba/C++", "SQL"]
-    },
-    {
-      "name": "Libraries/Frameworks",
+      "name": "Machine learning research",
       "level": "Master",
       "icon": "fa-solid fa-hashtag",
       "keywords": [
-        "Pytorch",
-        "RAPIDS",
-        "MLflow",
-        "Tensorboard",
-        "Open3D",
-        "Numba",
-        "OpenMMLab",
-        "Hugging-Face",
-        "Apache Spark"
+        "Transformers",
+        "Deep learning",
+        "LLM/SLM adaptation",
+        "Quantization-aware training",
+        "Post-training quantization",
+        "Computer vision",
+        "Multimodal learning"
       ]
     },
     {
-      "name": "Container/Streaming Technologies:",
+      "name": "AI-assisted development",
       "level": "Master",
       "icon": "fa-solid fa-hashtag",
-      "keywords": ["Docker", "Apptainer", "MQTT/ Kafka/ Spark Structured Streaming "]
+      "keywords": [
+        "Cursor",
+        "OpenClaw",
+        "LLM-based code generation and debugging",
+        "Rapid prototyping",
+        "Workflow automation"
+      ]
     },
     {
-      "name": "Tools:",
+      "name": "Programming and research software",
       "level": "Master",
       "icon": "fa-solid fa-hashtag",
-      "keywords": ["GitHub", "DockerHub", "Notion", "vscode", "QTcreator", "Wireshark"]
+      "keywords": ["Python", "C++", "SQL", "CUDA", "Reproducible experimentation", "Evaluation workflows", "Data processing"]
+    },
+    {
+      "name": "Frameworks and tooling",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": ["PyTorch", "Hugging Face", "OpenMMLab", "TensorBoard", "LangChain"]
+    },
+    {
+      "name": "Large-scale computing",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": ["Multi-GPU training", "Distributed training", "Apache Spark", "Spark Streaming", "Kafka", "GraphFrames"]
+    },
+    {
+      "name": "Infrastructure and systems",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": ["OpenStack", "AWS", "Kubernetes", "Kubeflow", "CI/CD", "Git"]
+    },
+    {
+      "name": "Optimisation and efficient AI",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": [
+        "GPU/CUDA optimisation",
+        "Low-latency inference",
+        "Model compression",
+        "Edge-oriented AI",
+        "Efficient execution on constrained systems"
+      ]
     }
   ],
   "languages": [
@@ -140,19 +285,19 @@
   ],
   "interests": [
     {
-      "name": "Computer Vision",
+      "name": "Computer vision",
       "icon": "fa-solid fa-tag",
-      "keywords": ["Vision Transformer (ViT)", "Convolution Transformer"]
+      "keywords": ["3D object detection", "LiDAR", "Vision and convolution transformers"]
     },
     {
-      "name": "Natural Language Processing ",
+      "name": "Efficient and edge AI",
       "icon": "fa-solid fa-tag",
-      "keywords": ["Large Language Models (LLM)"]
+      "keywords": ["Quantization", "LLM/SLM on constrained hardware", "CUDA"]
     },
     {
-      "name": "3D Distributed parallelism for Deep learning",
+      "name": "Distributed ML",
       "icon": "fa-solid fa-tag",
-      "keywords": ["DDP", "Zero", "Megatron-LM", "Mixed Precision"]
+      "keywords": ["Multi-GPU", "Spark", "Reproducible pipelines"]
     }
   ],
   "references": [
