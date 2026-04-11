@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Ammar Yasir Naich",
-    "label": "AI Education Specialist",
+    "label": "AI/ML Engineer",
     "image": "",
     "email": "a.y.naich@qmul.ac.uk",
     "phone": "+44-7436792873",
     "url": "https://ammaryasirnaich.github.io",
-    "summary": "AI Education Specialist with a PhD in Artificial Intelligence and extensive experience in developing efficient machine learning systems, reproducible research software, and scalable data pipelines for data-intensive and real-world applications. Expertise spans Python, distributed computing, GPU/CUDA optimisation, transformer-based models, model quantization, and edge-oriented AI, underpinned by a strong record of rigorous experimentation and technical delivery. Combines academic research, teaching, and postgraduate supervision with industry engineering experience to contribute high-impact, technically grounded AI research.",
+    "summary": "AI/ML engineer with a PhD in Artificial Intelligence and hands-on experience building efficient machine learning systems, reproducible research software, and scalable data pipelines for data-intensive and real-world applications. Comfortable across Python, distributed computing, GPU/CUDA optimisation, transformer-based models, quantization, and edge-oriented AI, with a track record of rigorous experimentation and delivery. Background spans industry engineering, academic research, teaching, and postgraduate supervision.",
     "location": {
       "address": "",
       "postalCode": "",
