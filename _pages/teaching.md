@@ -7,7 +7,7 @@ nav: true
 nav_order: 6
 ---
 
-I am a **Research Fellow** in the School of Electronic Engineering and Computer Science at [Queen Mary University of London](https://www.qmul.ac.uk/eecs/people/profiles/naichammaryasir.html), where my role combines research software engineering with **teaching**, **laboratory delivery**, and **MSc project supervision**.
+I am a **Research Fellow** in the School of Electronic Engineering and Computer Science at [Queen Mary University of London](https://www.qmul.ac.uk/eecs/people/profiles/naichammaryasir.html), where I teach, deliver laboratories, and supervise MSc projects. My current industry role is **AI Engineer (KTP Associate)** at Cold Banana.
 
 ## Modules and delivery
 

@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Ammar Yasir Naich",
-    "label": "AI/ML Engineer",
+    "label": "Applied AI Researcher and Engineer",
     "image": "",
     "email": "a.y.naich@qmul.ac.uk",
     "phone": "+44-7436792873",
     "url": "https://ammaryasirnaich.github.io",
-    "summary": "AI/ML engineer with a PhD in Artificial Intelligence and hands-on experience building efficient machine learning systems, reproducible research software, and scalable data pipelines for data-intensive and real-world applications. Comfortable across Python, distributed computing, GPU/CUDA optimisation, transformer-based models, quantization, and edge-oriented AI, with a track record of rigorous experimentation and delivery. Background spans industry engineering, academic research, teaching, and postgraduate supervision.",
+    "summary": "Applied AI researcher and engineer with a PhD in artificial intelligence and 5+ years specialising in real-time computer vision, GPU and edge AI, and agentic AI systems. Experienced in building and deploying production AI platforms using NVIDIA technologies, deep learning, LLMs, and scalable ML infrastructure. Current work spans a KTP Associate role at Cold Banana and a Research Fellow role at Queen Mary University of London.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -28,6 +28,19 @@
     ]
   },
   "work": [
+    {
+      "name": "Cold Banana",
+      "location": "Bournemouth, UK",
+      "position": "AI Engineer (KTP Associate)",
+      "url": "https://www.linkedin.com/company/coldbanana",
+      "startDate": "2026-08-01",
+      "summary": "",
+      "highlights": [
+        "Leading a GPU-accelerated multi-camera analytics platform using NVIDIA DeepStream and Jetson Orin, integrating detection, tracking, facial expression, and gesture recognition for real-time edge deployment.",
+        "Architecting an enterprise agentic RAG platform combining TurboVec, LLMs, tool orchestration, memory, grounding, and guardrails.",
+        "Driving AI systems from architecture and rapid prototyping through performance optimisation, benchmarking, integration, and production deployment."
+      ]
+    },
     {
       "name": "Digital Reality Corp (DRC)",
       "location": "London, UK",
@@ -89,11 +102,12 @@
       "location": "Pakistan",
       "position": "Technical Manager / Software Architecture",
       "url": "",
-      "startDate": "2011-01-01",
+      "startDate": "2015-01-01",
       "endDate": "2018-09-30",
       "summary": "",
       "highlights": [
         "Led software architecture and cross-functional teams delivering scalable, low-latency systems in C/C++/Qt.",
+        "Led a high-performance GIS application in C/C++/QGIS, integrating real-time tracking, data recovery, pattern matching, and data mining.",
         "Developed software for real-time acquisition and processing from digital I/O and serial sensors; improved processing speed by 40%.",
         "Architected emulators and simulators in C/C++ for hardware testing, improving reliability and reducing project cost by 35%.",
         "Contributed to Critical Event Management Services across 250 possible system events, reducing downtime by 70%."
@@ -134,26 +148,33 @@
   ],
   "publications": [
     {
+      "name": "PointConViT: An Adaptable Convolution-Transformer Model for High-rate 3D Detection in Autonomous Robot",
+      "publisher": "Proceedings of DeLTA 2026, pp. 299–317. Best Industrial Paper Award.",
+      "releaseDate": "2026",
+      "url": "https://www.insticc.org/node/TechnicalProgram/DeLTA/2026/presentationDetails/149875",
+      "summary": ""
+    },
+    {
       "name": "LiDAR-based intensity-aware outdoor 3D object detection",
       "publisher": "Sensors 24.9 (2024): 2942, MDPI",
       "releaseDate": "2024",
       "url": "https://www.mdpi.com/1424-8220/24/9/2942",
       "summary": ""
-    },
-    {
-      "name": "PointConViT: Efficient 3D Object Detection with Adaptable Transformer Convolution Fusion",
-      "publisher": "Under review",
-      "releaseDate": "",
-      "url": "",
-      "summary": ""
     }
   ],
   "awards": [
     {
+      "title": "Best Industrial Paper Award",
+      "date": "2026-07-17",
+      "awarder": "DeLTA 2026",
+      "summary": "PointConViT: An Adaptable Convolution-Transformer Model for High-rate 3D Detection in Autonomous Robot",
+      "url": "https://delta.scitevents.org/PreviousAwards.aspx"
+    },
+    {
       "title": "Nebius Fellowship Award — AI Inference Engineer track",
-      "date": "2025-01-01",
+      "date": "2026-06-29",
       "awarder": "Nebius",
-      "summary": "",
+      "summary": "Selected for the AI Inference Engineer track and awarded the LLM Architecture credential for large language model inference, deployment, optimisation, and scalable serving.",
       "url": ""
     },
     {
@@ -239,7 +260,7 @@
       "name": "Frameworks and tooling",
       "level": "Master",
       "icon": "fa-solid fa-hashtag",
-      "keywords": ["PyTorch", "Hugging Face", "OpenMMLab", "TensorBoard", "LangChain"]
+      "keywords": ["PyTorch", "Hugging Face", "OpenMMLab", "TensorBoard", "LangChain", "MLflow"]
     },
     {
       "name": "Large-scale computing",
@@ -259,10 +280,25 @@
       "icon": "fa-solid fa-hashtag",
       "keywords": [
         "GPU/CUDA optimisation",
+        "NVIDIA DeepStream",
+        "Jetson Orin",
         "Low-latency inference",
         "Model compression",
         "Edge-oriented AI",
         "Efficient execution on constrained systems"
+      ]
+    },
+    {
+      "name": "Agentic AI and RAG",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": [
+        "RAG",
+        "Agentic workflows",
+        "Tool orchestration",
+        "Memory",
+        "Grounding",
+        "Guardrails"
       ]
     }
   ],
