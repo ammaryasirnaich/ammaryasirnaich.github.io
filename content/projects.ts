@@ -38,6 +38,7 @@ export type Project = {
   overview: string[];
   problem: string[] | null;
   architecture: ArchitectureStep[] | null;
+  architectureImage?: string;
   contribution: string[];
   challenges: string[] | null;
   decisions: Decision[] | null;
@@ -150,80 +151,92 @@ export const projects: Project[] = [
     title: "Enterprise Agentic RAG Platform",
     category: "Agentic AI · LLM Systems",
     summary:
-      "Agentic and graph RAG for a construction client, over PDFs, documents, images, and graphs.",
+      "Ingestion through hybrid retrieval, LangGraph orchestration, Graph RAG, evaluation, and FastAPI serving for mixed enterprise documents.",
+    architectureImage: "/images/enterprise-agentic-rag-architecture.png",
     technologies: [
-      "Foundation models",
-      "Agentic RAG",
+      "LangGraph",
+      "LlamaIndex",
+      "LangChain",
+      "Qdrant",
+      "BGE-M3",
+      "ColPali / ColQwen",
       "Graph RAG",
-      "TurboVec",
-      "Tool orchestration",
-      "Memory",
-      "Grounding",
-      "Guardrails",
+      "Ragas",
+      "Langfuse",
+      "FastAPI",
+      "PostgreSQL",
+      "Redis",
     ],
     confidential: true,
     role: "AI Engineer / KTP Associate, Cold Banana, Bournemouth",
     status: "In progress · August 2026 – present",
     overview: [
-      "An enterprise agentic RAG platform for a construction-industry client. Project files of different kinds go into one workflow: PDFs, Word documents, images, and graphs.",
+      "An enterprise agentic RAG platform for a construction-industry client. Documents, code, spreadsheets, images, and web pages move through one stack: ingestion and understanding, embeddings and indexing with Graph RAG, hybrid retrieval with fusion and reranking, LangGraph agent orchestration, then evaluation and observability on FastAPI, PostgreSQL, Redis, and object storage.",
       "Ammar is architecting it as AI Engineer and KTP Associate at Cold Banana in Bournemouth, from August 2026, alongside the edge analytics platform. The project is in progress.",
       confidentiality,
     ],
     problem: [
-      "Construction projects already produce mixed files: specifications and other PDFs, Word documents, images such as drawings and site photos, and graphs such as programme charts.",
-      "A text-only index treats those as the same kind of input. The platform has to retrieve across them, reason with tools and memory, and keep each answer tied to the source it came from.",
+      "Construction projects produce mixed inputs—PDFs and Word files, drawings and site photos, spreadsheets, and web content—that a single text index does not represent well.",
+      "The system has to ingest and chunk that material, retrieve with dense, sparse, and graph signals, orchestrate tools and memory in an agent loop, and return cited answers that can be evaluated and traced in production.",
     ],
     architecture: [
       {
-        title: "Mixed construction inputs",
+        title: "Data sources & ingestion",
         detail:
-          "PDFs, Word documents, images, and graphs from the construction project enter one pipeline.",
+          "Connectors and readers (LlamaIndex, LangChain, Unstructured, Docling) ingest documents, code, spreadsheets, images, and web pages, with OCR, layout, chunking, and metadata enrichment.",
       },
       {
-        title: "Foundation-model encoding",
+        title: "Embeddings, indexing & Graph RAG",
         detail:
-          "Foundation models encode that multidimensional input so a drawing, a photo, a document, and a chart can be retrieved together.",
+          "BGE-M3 and ColPali/ColQwen embeddings land in Qdrant with BM25 sparse retrieval. Graph RAG adds entity and relation links across documents.",
       },
       {
-        title: "Agentic and graph RAG",
+        title: "Hybrid retrieval",
         detail:
-          "Agentic RAG runs retrieval, tool orchestration, and memory. Graph RAG links related items across the project files. TurboVec is part of the retrieval path.",
+          "Dense and sparse hits fuse with RRF, then BGE or Jina reranking builds the final context for generation.",
       },
       {
-        title: "Grounded answers",
+        title: "LangGraph agentic runtime",
         detail:
-          "Grounding and guardrails keep a cited source attached to the answer.",
+          "LangGraph plans, retrieves, calls tools (including MCP), keeps state in Redis/PostgreSQL, and generates with hosted or local LLMs plus citations.",
+      },
+      {
+        title: "Evaluation & platform",
+        detail:
+          "Ragas, DeepEval, and tracing (Langfuse / Phoenix / LangSmith) close the loop. FastAPI, PostgreSQL, Redis, S3/MinIO, and Docker serve the stack.",
       },
     ],
     contribution: [
-      "Architecting the platform for a construction-industry client.",
-      "Choosing foundation models so PDFs, documents, images, and graphs enter one RAG system.",
-      "Designing the workflow as Agentic RAG with Graph RAG, TurboVec, memory, grounding, and guardrails.",
+      "Architecting the end-to-end platform for a construction-industry client across ingestion, indexing, retrieval, agents, evaluation, and serving.",
+      "Designing multimodal embeddings (BGE-M3, ColPali/ColQwen) and Qdrant hybrid retrieval with RRF and reranking.",
+      "Adding Graph RAG for entity/relation linking across project files, and LangGraph orchestration with tools, memory, and cited generation.",
+      "Wiring evaluation and observability (Ragas, DeepEval, Langfuse) and the FastAPI / PostgreSQL / Redis / object-storage deployment path.",
     ],
     challenges: [
-      "The construction client’s files are not one format. The system has to take PDFs, Word documents, images, and graphs.",
-      "A drawing, a site photo, and a programme chart are not text passages, so a single text index cannot represent them.",
-      "An answer still has to stay tied to the project file it came from, across those input types.",
+      "Mixed formats need OCR, layout, and table extraction before chunking—not a single text loader.",
+      "Dense-only search misses lexical matches; sparse-only search misses semantic and multimodal hits—so dense, sparse, fusion, and reranking have to work together.",
+      "Related clauses, drawings, and packages sit in different files; Graph RAG has to link them without breaking cited, grounded answers.",
+      "Agent loops need durable state, tool calling, and production tracing so failures and quality regressions are visible.",
     ],
     decisions: [
       {
-        title: "Why foundation models?",
-        body: "The input is multidimensional: PDFs, documents, images, and graphs. Foundation models encode those types into one RAG system instead of a text-only index.",
+        title: "Why hybrid retrieval over dense-only?",
+        body: "Qdrant dense search with BGE-M3 and ColPali/ColQwen covers semantic and multimodal content; BM25 covers exact terms. RRF fusion plus reranking produces a single context window for the agent.",
       },
       {
-        title: "Why Agentic RAG and Graph RAG?",
-        body: "Agentic RAG combines retrieval, tool orchestration, and memory in one workflow. Graph RAG links a clause, a drawing, a package, or a chart when the project files refer to each other. TurboVec sits on the retrieval path.",
+        title: "Why LangGraph plus Graph RAG?",
+        body: "LangGraph owns plan–retrieve–tool–generate loops with Redis/PostgreSQL state. Graph RAG links entities and relations across documents so a query can follow references that keyword or vector match alone would miss.",
       },
       {
-        title: "Why grounding and guardrails?",
-        body: "A construction answer is only useful if the source stays attached. Grounding and guardrails keep the reply tied to the project file rather than a generic model response.",
+        title: "Why evaluation and observability in the same design?",
+        body: "Ragas and DeepEval score answer quality and retrieval; Langfuse, Phoenix, or LangSmith trace runs. Feedback feeds back into retrieval so the platform can be tuned under production load, not only in a notebook.",
       },
     ],
     results: {
       paragraphs: [
         "The platform is in progress, so these are the effects it is built for, not a measured score.",
-        "A construction team can ask across the files the project already produces: specifications and other PDFs, Word documents, images such as drawings and site photos, and graphs such as programme charts. The answer is meant to come from those sources, with the cited file attached, rather than from a generic model reply.",
-        "Graph links let a question follow a reference from a clause to a drawing, a package, or a chart, so the search is not limited to the single document that happened to match the words.",
+        "A construction team can ask across the files the project already produces. Ingestion, hybrid retrieval, Graph RAG links, and LangGraph orchestration are meant to return answers with sources attached rather than generic model replies.",
+        "Evaluation and tracing sit on the same path as serving, so quality and retrieval behaviour can be inspected as the stack moves toward production on FastAPI and Docker.",
       ],
     },
     links: [],

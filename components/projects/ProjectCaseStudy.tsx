@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/content/projects";
 import { PipelineDiagram } from "@/components/diagrams/PipelineDiagram";
@@ -63,12 +64,24 @@ export function ProjectCaseStudy({ project }: { project: Project }) {
           <h2 id="architecture" className="text-2xl font-semibold tracking-tight">
             System architecture
           </h2>
-          <div className="mt-4">
+          <div className="mt-4 space-y-6">
+            {project.architectureImage ? (
+              <figure className="overflow-hidden rounded-2xl border border-border bg-card">
+                <Image
+                  src={project.architectureImage}
+                  alt={`${heading} architecture diagram`}
+                  width={1280}
+                  height={720}
+                  className="h-auto w-full"
+                  priority
+                />
+              </figure>
+            ) : null}
             {project.architecture ? (
               <PipelineDiagram steps={project.architecture} label={`${heading} architecture`} />
-            ) : (
+            ) : !project.architectureImage ? (
               <Placeholder kind="visual" />
-            )}
+            ) : null}
           </div>
         </section>
       </Container>
