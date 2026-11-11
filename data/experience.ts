@@ -35,7 +35,7 @@ export const experience: Role[] = [
     dates: "October 2021 – Present",
     focus: [
       "Nominated by QMUL to lecture Introduction to Data Science at QUPT in Hainan, China.",
-      "Leading a scalable AI platform for model hosting and evaluation on OpenStack, with reproducible workflows, distributed GPU training and deployment, CLI tooling, and authentication.",
+      "Leading an on-premises model hub where students and researchers upload models, attach model cards, receive automated GPU evaluation, and compare scores on a leaderboard, on a k3s workflow with sandboxed execution and queue-based scaling.",
       "Developed Big Data Processing coursework and labs, including Apache Spark Streaming and Apache GraphFrames, and assessed student work.",
       "Supervised 23 MSc students in deep learning and computer vision.",
       "Designed and delivered Principles of Machine Learning coursework and labs, integrating crowdsourced datasets and improving student competency in machine learning techniques by 75%.",

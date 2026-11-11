@@ -72,7 +72,7 @@ export const projects: Project[] = [
     status: "In progress · August 2026 – present",
     overview: [
       "A live multi-camera analytics platform. One GPU process detects people, tracks them, keeps a single identity across views, and reads facial emotion.",
-      "Ammar leads the work as AI Engineer and KTP Associate at Cold Banana in Bournemouth, from August 2026. The project is in progress.",
+      "I lead the work as AI Engineer and KTP Associate at Cold Banana in Bournemouth, from August 2026. The project is in progress.",
       confidentiality,
     ],
     problem: [
@@ -172,7 +172,7 @@ export const projects: Project[] = [
     status: "In progress · August 2026 – present",
     overview: [
       "An enterprise agentic RAG platform for a construction-industry client. Documents, code, spreadsheets, images, and web pages move through one stack: ingestion and understanding, embeddings and indexing with Graph RAG, hybrid retrieval with fusion and reranking, LangGraph agent orchestration, then evaluation and observability on FastAPI, PostgreSQL, Redis, and object storage.",
-      "Ammar is architecting it as AI Engineer and KTP Associate at Cold Banana in Bournemouth, from August 2026, alongside the edge analytics platform. The project is in progress.",
+      "I am architecting it as AI Engineer and KTP Associate at Cold Banana in Bournemouth, from August 2026, alongside the edge analytics platform. The project is in progress.",
       confidentiality,
     ],
     problem: [
@@ -265,7 +265,7 @@ export const projects: Project[] = [
     overview: [
       "PointConViT: An Adaptable Convolution-Transformer Model for High-rate 3D Detection in Autonomous Robot. Published in the Proceedings of the 7th International Conference on Deep Learning Theory and Applications (DeLTA), 2026, pages 299–317, Porto, Portugal.",
       "Authors: Ammar Yasir Naich, Nikesh Bajaj, Sofia Zahri, and Jesús Requena Carrión, Queen Mary University of London. The paper received the Best Industrial Paper Award.",
-      "Ammar is the first author. The public repository hosts the official implementation for training and 3D object detection inference.",
+      "I am the first author. The public repository hosts the official implementation for training and 3D object detection inference.",
     ],
     problem: [
       "Fast, reliable 3D object detection matters for autonomous robot navigation. Vision transformers are a candidate for point clouds, and those clouds are large, sparse, and irregular.",
@@ -347,42 +347,87 @@ export const projects: Project[] = [
     title: "Scalable AI Evaluation and Research Platform",
     category: "ML Infrastructure",
     summary:
-      "Research platform for hosting, executing, evaluating, and comparing machine-learning models across distributed GPU resources.",
-    technologies: [
-      "OpenStack",
-      "Distributed training",
-      "Model evaluation",
-      "CLI",
-      "Authentication",
-    ],
+      "On-premises hub where students and researchers upload models, run automated GPU evaluation, compare scores on a leaderboard, and share results inside the institution.",
+    technologies: ["k3s", "Helm", "Hatchet", "RabbitMQ", "Buildah", "gVisor", "KEDA"],
     confidential: false,
     role: "Research Fellow, Queen Mary University of London",
     status: "In progress · October 2021 – present",
     overview: [
-      "A scalable platform for hosting and evaluating machine-learning models on OpenStack, with reproducible evaluation workflows and distributed training and deployment across GPU resources.",
-      "Ammar leads the work as Research Fellow in the School of Electronic Engineering and Computer Science at Queen Mary University of London. The fellowship runs from October 2021 and is current.",
-      "He built internal tooling, CLI-based interfaces, and authentication-integrated research software for experimentation and collaboration.",
+      "An on-premises hub where students and researchers keep models inside the institution. They create accounts, write model cards, upload from the web or a CLI, and receive an automated GPU evaluation. The CLI and other devices use a JWT from an OAuth login with their email account.",
+      "I lead the work as Research Fellow in the School of Electronic Engineering and Computer Science at Queen Mary University of London. The fellowship runs from October 2021 and is current.",
+      "Scores are compared on a leaderboard, and models can be shared with the team. The data stays on the institution's infrastructure.",
     ],
     problem: [
-      "The platform has to support organised model execution, reproducible evaluation, and distributed training and deployment across shared GPU resources.",
+      "Models need a private place to be uploaded, documented, evaluated, and compared without leaving the institution. A shared leaderboard has to reflect the same criteria for every run.",
     ],
     architecture: [
-      { title: "Model hosting" },
-      { title: "Organised model execution" },
-      { title: "Reproducible evaluation" },
-      { title: "Distributed training and deployment" },
-      { title: "OpenStack GPU resources" },
-      { title: "CLI interfaces" },
-      { title: "Authentication" },
+      {
+        title: "Accounts",
+        detail:
+          "Students and researchers sign in with their email through OAuth and get a personal profile. The CLI and other devices use a JWT from that login.",
+      },
+      {
+        title: "Model cards",
+        detail: "Each model carries documentation of what it is and how it should be evaluated.",
+      },
+      {
+        title: "Web and CLI upload",
+        detail: "Models can be submitted from the web interface or from the command line.",
+      },
+      {
+        title: "GPU evaluation",
+        detail:
+          "Hatchet orders the run, Buildah builds one image, gVisor sandboxes it, and KEDA scales workers from RabbitMQ queue depth.",
+      },
+      {
+        title: "Leaderboard",
+        detail: "The same evaluation criteria rank models so results can be compared.",
+      },
+      {
+        title: "Sharing",
+        detail: "Models can be shared with the team and kept inside the institution.",
+      },
     ],
     contribution: [
-      "Leading development of the model hosting and evaluation platform on OpenStack.",
-      "Supporting organised execution, reproducible evaluation, and distributed GPU training and deployment.",
-      "Building internal tooling, CLI interfaces, and authentication-integrated research software.",
+      "Leading the on-premises model hub for students and researchers at Queen Mary.",
+      "Accounts, model cards, and upload from the web and a CLI, with scores compared on a leaderboard and models shared with the team.",
+      "Automated GPU evaluation on k3s: Hatchet orders the run, Buildah builds one image, gVisor sandboxes it, and KEDA scales workers from RabbitMQ queue depth.",
     ],
-    challenges: null,
-    decisions: null,
-    results: null,
+    challenges: [
+      "Uploaded models are untrusted code on a shared machine. A bad or hostile submission has to be isolated from the host and from other runs.",
+      "One shared GPU cannot evaluate every model at once. Submissions have to queue, retry, and still finish in a known order.",
+      "A leaderboard is only fair if every model is scored with the same data, metrics, and environment.",
+      "The machine should not keep evaluation workers running when nothing is queued, and it should pick work up again when a burst of uploads arrives.",
+    ],
+    decisions: [
+      {
+        title: "Why a workflow engine for each submission?",
+        body: "Hatchet runs validate, image build, sandboxed evaluation, and metric recording as one ordered workflow, with retries and a visible pass or fail. A single script loses that state when a build or eval fails halfway.",
+      },
+      {
+        title: "Why Buildah instead of a Docker daemon in the cluster?",
+        body: "Each submission needs its own image. Buildah does that as a one-off job, without mounting a privileged Docker socket on the shared cluster.",
+      },
+      {
+        title: "Why gVisor only for the evaluation run?",
+        body: "The evaluation executes uploaded code. gVisor intercepts that code in a user-space kernel. The workflow engine, image build, and registry stay on the normal runtime.",
+      },
+      {
+        title: "Why scale on queue depth?",
+        body: "Workers can look idle by CPU while submissions are waiting. KEDA watches the RabbitMQ backlog, adds workers when the queue grows, and scales them to zero when it is empty.",
+      },
+      {
+        title: "Why keep the hub on premises?",
+        body: "Models, datasets, and scores stay on the institution's infrastructure. Accounts, model cards, and the leaderboard sit in front of that private evaluation path.",
+      },
+    ],
+    results: {
+      paragraphs: [
+        "A student or researcher can upload a model from the web or the CLI, attach a model card, and get an automated GPU evaluation without sending the model off the institution's infrastructure.",
+        "Each run is built once, executed in a sandbox, and scored with the same criteria, so the leaderboard compares models rather than machines or manual marking.",
+        "Evaluation workers sit at zero when the queue is empty and scale up from queue depth when submissions arrive, so the shared machine is not held by idle workers.",
+      ],
+    },
     links: [],
   },
   {
